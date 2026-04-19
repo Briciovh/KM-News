@@ -1,7 +1,6 @@
 package com.softeen.kmmnews
 
-class JsPlatform: Platform {
+actual fun getPlatform(): Platform = object : Platform {
     override val name: String = "Web with Kotlin/JS"
+    override val version: String = "unknown"
 }
-
-actual fun getPlatform(): Platform = JsPlatform()

@@ -2,8 +2,8 @@ package com.softeen.kmmnews
 
 import platform.UIKit.UIDevice
 
-class IOSPlatform: Platform {
-    override val name: String = UIDevice.currentDevice.systemName() + " " + UIDevice.currentDevice.systemVersion
-}
 
-actual fun getPlatform(): Platform = IOSPlatform()
+actual fun getPlatform(): Platform = object : Platform {
+    override val name: String = UIDevice.currentDevice.systemName()
+    override val version: String = UIDevice.currentDevice.systemVersion
+}

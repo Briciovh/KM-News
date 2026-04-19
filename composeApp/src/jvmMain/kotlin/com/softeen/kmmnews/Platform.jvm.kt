@@ -1,7 +1,6 @@
 package com.softeen.kmmnews
 
-class JVMPlatform: Platform {
-    override val name: String = "Java ${System.getProperty("java.version")}"
+actual fun getPlatform(): Platform = object : Platform {
+    override val name: String = "JVM"
+    override val version: String = System.getProperty("java.version") ?: "unknown"
 }
-
-actual fun getPlatform(): Platform = JVMPlatform()
